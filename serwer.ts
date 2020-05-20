@@ -1,20 +1,19 @@
 import {createServer} from 'http';
 import * as fs from 'fs';
+import * as sqlite3 from 'sqlite3';
 
+function zalozBaze() {
+	sqlite3.verbose();
+	let db = new sqlite3.Database('baza.db');
+	db.run('CREATE TABLE wyswietlenia (sciezka VARCHAR(255), liczba INT);');
+	db.close();
+}
 
-async function zapiszCos() {
-	let fd = -1;
-	try {
-		fd = await open('plik3.txt', 'a');
-		await write(fd, 'To jeszcze z async/await');
-		await close(fd);
-
-	} catch (e) {
-		console.log('Jakiś błąd w trakcie zapisywania', e);
-		if (fd != -1) {
-			await close(fd);
-		}
-	}
+function wpiszDane() {
+	sqlite3.verbose();
+	let db = new sqlite3.Database('baza.db');
+	db.run('INSERT INTO wyswietlenia (sciezka, liczba) VALUES ("a", 1), ("b",2);');
+	db.close();
 }
 
 let server = createServer(
@@ -26,3 +25,15 @@ let server = createServer(
 
 
 server.listen(8080);
+
+sqlite3.verbose();
+
+let db = new sqlite3.Database('baza.db');
+
+db.all('SELECT sciezka, liczba FROM wyswietlenia;', [], (err, rows) => {
+	if (err) throw(err);
+	for(let {sciezka, liczba} of rows) {
+		console.log(sciezka, '->', liczba);
+	}
+	db.close();
+});
