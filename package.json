@@ -1,16 +1,16 @@
 {
-"name": "www-zal4",
-"version": "1.0.0",
-"description": "www zal4",
-"main": "index.js",
-"scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1",
-	"watch": "npm-watch"
-},
-"repository": {
-	"type": "git",
-	"url": "git+https://github.com/xBorox1/www-zal4.git"
-},
+	"name": "www-zal4",
+	"version": "1.0.0",
+	"description": "www zal4",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch": "npm-watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/xBorox1/www-zal4.git"
+	},
 	"author": "Michał Borowski",
 	"license": "ISC",
 	"bugs": {
@@ -23,14 +23,14 @@
 		"typescript": "^3.9.3"
 	},
 	"watch": {
-
 		"build": {
-
-			"patterns": ["."],
-
+			"patterns": [
+				"."
+			],
 			"extensions": "ts"
-
 		}
-
+	},
+	"devDependencies": {
+		"ts-node": "^8.10.1"
 	}
 }
