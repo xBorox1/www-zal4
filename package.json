@@ -1,0 +1,22 @@
+{
+  "name": "www-zal4",
+  "version": "1.0.0",
+  "description": "www zal4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xBorox1/www-zal4.git"
+  },
+  "author": "Michał Borowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xBorox1/www-zal4/issues"
+  },
+  "homepage": "https://github.com/xBorox1/www-zal4#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
